@@ -5,7 +5,6 @@ import pygame
 class Sample:
     def __init__(self):
         self.play_flag = False
-        self.ogg_path = ""
 
         # Oggファイルパス
         self.ogg_path = "maou_bgm_acoustic22.ogg"

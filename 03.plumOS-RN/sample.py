@@ -1,6 +1,5 @@
 import ctypes
 from ctypes import c_int, c_char_p
-from pathlib import Path
 
 import pyxel
 
@@ -8,7 +7,9 @@ import pyxel
 class Sample:
     def __init__(self):
         self.play_flag = False
-        self.ogg_path = ""
+
+        # Oggファイルパス
+        self.ogg_path = "maou_bgm_acoustic22.ogg"
 
         # Pyxel初期化
         pyxel.init(256, 256)
@@ -16,10 +17,6 @@ class Sample:
 
     def update(self):
         if not self.play_flag:
-            # Oggファイル格納パス生成
-            for path in Path.cwd().rglob("maou_bgm_acoustic22.ogg"):
-                self.ogg_path = str(path)
-
             # SDL2およびSDL2_mixerの共有ライブラリをロード
             sdl2 = ctypes.CDLL("/usr/lib/libSDL2.so")
             sdl2_mixer = ctypes.CDLL("/usr/lib/libSDL2_mixer.so")

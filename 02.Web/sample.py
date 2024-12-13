@@ -1,6 +1,3 @@
-import os
-from pathlib import Path
-
 import pyxel
 import pygame
 
@@ -8,7 +5,9 @@ import pygame
 class Sample:
     def __init__(self):
         self.play_flag = False
-        self.ogg_path = ""
+
+        # Oggファイルパス
+        self.ogg_path = "maou_bgm_acoustic22.ogg"
 
         # pygame初期化
         pygame.mixer.init()
@@ -19,10 +18,6 @@ class Sample:
 
     def update(self):
         if not self.play_flag:
-            # Oggファイル格納パス生成
-            for path in Path.cwd().rglob("maou_bgm_acoustic22.ogg"):
-                self.ogg_path = str(path)
-
             # Oggファイル読み込み
             pygame.mixer.music.load(self.ogg_path)
 
