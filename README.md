@@ -38,7 +38,8 @@ cd 03.plumOS-RN
 pyxel package ./ sample.py
 ```
 
-# 使用BGM* [魔王魂](https://maou.audio/#google_vignette) 様： [アコースティック22](https://maou.audio/bgm_acoustic22/) 
+# 使用BGM
+* [魔王魂](https://maou.audio/#google_vignette) 様： [アコースティック22](https://maou.audio/bgm_acoustic22/) 
 
 # Authors
 高橋かずひと(https://twitter.com/KzhtTkhs)
