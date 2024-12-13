@@ -10,10 +10,6 @@ class Sample:
         self.play_flag = False
         self.ogg_path = ""
 
-        # pyxapp名取得
-        for path in Path.cwd().rglob("*.pyxapp"):
-            self.pyxapp_path = path
-
         # pygame初期化
         pygame.mixer.init()
 
@@ -24,11 +20,8 @@ class Sample:
     def update(self):
         if not self.play_flag:
             # Oggファイル格納パス生成
-            self.ogg_path = os.path.join(
-                "/tmp/.pyxel/play/42",
-                self.pyxapp_path.stem,
-                "maou_bgm_acoustic22.ogg",
-            )
+            for path in Path.cwd().rglob("maou_bgm_acoustic22.ogg"):
+                self.ogg_path = str(path)
 
             # Oggファイル読み込み
             pygame.mixer.music.load(self.ogg_path)
